@@ -15,8 +15,14 @@ function konversi() {
     }
 }
 function reset_() {
-    location.reload()
-    document.getElementsByTagName("textarea").value = "";
+    // location.reload()
+    // console.log()
+    var textarea = document.getElementsByTagName("textarea");
+    // console.log(textarea.length)
+    for (var i = 0; i < textarea.length; i++) {
+        // console.log()
+        textarea[i].value = ""
+    }
 }
 function reverse() {
     // alert("reverse");
