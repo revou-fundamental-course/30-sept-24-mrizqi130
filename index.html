@@ -17,7 +17,8 @@
     <div>
         <div id="div1">
             <p class="suhu">Celsius (&deg;C):</p>
-            <textarea class="box" id="suhu1"></textarea>
+            <!-- <textarea class="box" id="suhu1"></textarea> -->
+            <input class="box" type="text" id="suhu1" required>
         </div>
         <br>
         <input class="btn" style="background-color: #04AA6D" type="button" value="Konversi" onclick="konversi()">
@@ -28,11 +29,13 @@
     <br>
     <div id="div2">
         <p class="suhu">Fahrenheit (&deg;F):</p>
-        <textarea class="box" id="suhu2" disabled></textarea>
+        <!-- <textarea class="box" id="suhu2" disabled></textarea> -->
+        <input class="box" type="text" id="suhu2" disabled required>
     </div>
     <br>
     <p class="suhu">Cara Kalkulasi:</p>
-    <textarea class="box" name="" id="kalkulasi" disabled></textarea>
+    <!-- <textarea class="box" name="" id="kalkulasi" disabled></textarea> -->
+    <input type="text" class="box" id="kalkulasi" disabled>
 
     <script src="js/script.js"></script>
 </body>
