@@ -16,6 +16,7 @@ function konversi() {
 }
 function reset_() {
     location.reload()
+    document.getElementsByTagName("textarea").value = "";
 }
 function reverse() {
     // alert("reverse");
