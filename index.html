@@ -5,25 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Suhu</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <p>ini halaman</p>
+    <h1>Kalkulator Suhu Sederhana</h1>
     <p>Masukan suhu derajat Celsius (&deg;C) ke kotak di bawah, lalu klik tombol konversi untuk mendapatkan hasil
-        konversi dalam bentuk Fahrenheit (&deg;F).</p>
+        konversi dalam bentuk Fahrenheit (&deg;F). Klik tombol 'Reverse' untuk perhitungan sebaliknya</p>
 
-    <p>Celsius (&deg;C):</p>
-    <form action="">
-        <textarea name="" id=""></textarea>
+    <div>
+        <div id="div1">
+            <p class="suhu">Celsius (&deg;C):</p>
+            <textarea class="box" id="suhu1"></textarea>
+        </div>
+        <!-- <input type="text" id="input" oninput="konversi()"> -->
         <br>
-        <input type="button" value="Konversi">
-        <input type="button" value="Reset">
-        <input type="button" value="Reverse">
-    </form>
-    <p>Fahrenheit (&deg;F):</p>
-    <textarea name="" id=""></textarea>
-    <p>Cara Kalkulasi:</p>
-    <textarea name="" id=""></textarea>
+        <input class="btn" style="background-color: #04AA6D" type="button" value="Konversi" onclick="konversi()">
+        <input class="btn" style="background-color: #f44336;" type="button" value="Reset" onclick="reset_()">
+        <input class="btn" style="background-color: #555555;" type="button" value="Reverse" onclick="reverse()">
+    </div>
+
+    <br>
+    <div id="div2">
+        <p class="suhu">Fahrenheit (&deg;F):</p>
+        <textarea class="box" id="suhu2" disabled></textarea>
+    </div>
+    <br>
+    <p class="suhu">Cara Kalkulasi:</p>
+    <textarea class="box" name="" id="kalkulasi" disabled></textarea>
+
+    <script>
+        let status = false;
+        function konversi() {
+            let suhu = document.getElementById("suhu1").textContent;
+            if (status) {
+                // console.log("fahren")
+                let fahren = parseInt(document.getElementById("suhu2").value);
+                let celsi = (fahren - 32) * 5 / 9;
+                console.log(celsi);
+                document.getElementById("suhu1").innerHTML = celsi.toFixed(2);
+                document.getElementById("kalkulasi").value = "(" + fahren + "\u00B0F - 32) * 5 / 9 = " + celsi.toFixed(2) + "\u00B0C";
+            } else {
+                // console.log("celsi")
+                let celsi = parseInt(document.getElementById("suhu1").value);
+                let fahren = celsi * (9 / 5) + 32;
+                console.log(celsi);
+                document.getElementById("suhu2").innerHTML = fahren.toFixed(2);
+                document.getElementById("kalkulasi").value = celsi + "\u00B0C * ( 9 / 5) + 32 = " + fahren.toFixed(2) + "\u00B0F";
+            }
+            // alert("konversi");
+            // document.getElementById("kalkulasi").value = "(" + celsi + "(&deg) + C * 9 / 5) + 32";
+            // document.getElementById("kalkulasi").value = "sfd";
+
+            // Create element:
+            // const para = document.createElement("p");
+            // para.innerHTML = "(" + celsi + "$deg;C * 9 / 5) + 32";
+
+            // // Append to another element:
+            // document.getElementById("kalkulasi").value = "(" + celsi + "\u00B0C * 9 / 5) + 32 = " + fahren;
+            // if (!isNaN(fahren)) {
+            //     let celsi = (fahren * 9 / 5) + 32;
+            //     console.log(celsi);
+            //     document.getElementById("fahrenheit").value = celsi;
+            // } else {
+            //     document.getElementById("fahrenheit").value = "";
+            // }
+        }
+        function reset_() {
+            location.reload()
+            // console.log(document.getElementById("suhu2").textContent)
+            // let celsi = document.getElementById("suhu1").textContent;
+            // let fahren = document.getElementById("suhu2").textContent;
+            // document.getElementById("suhu1").textContent = fahren;
+            // document.getElementById("suhu2").textContent = celsi;
+
+            // let text = document.getElementById("myBtn").textContent;
+            // document.getElementById("demo").innerHTML = text;
+        }
+        function reverse() {
+            // alert("reverse");
+            if (status) {
+                let fahren = document.getElementById("div1").innerHTML
+                let celsi = document.getElementById("div2").innerHTML
+                // fahren to celsi
+                document.getElementById("div1").innerHTML = celsi;
+                document.getElementById("div2").innerHTML = fahren;
+                document.getElementById("suhu1").disabled = false;
+                document.getElementById("suhu2").disabled = true;
+                status = false;
+                // console.log("celsi to fahren")
+            } else {
+                // celsi to fahren
+                let celsi = document.getElementById("div1").innerHTML
+                let fahren = document.getElementById("div2").innerHTML
+                // document.getElementById("div1").disabled = false;
+                // document.getElementById("div2").disabled = true;
+                document.getElementById("div1").innerHTML = fahren;
+                document.getElementById("div2").innerHTML = celsi;
+                document.getElementById("suhu1").disabled = true;
+                document.getElementById("suhu2").disabled = false;
+                status = true;
+                // console.log("fahren to celsi")
+            }
+            // console.log(document.getElementById("suhu1").disabled)
+            // console.log(document.getElementById("suhu2").disabled)
+            // document.getElementById("suhu1").disabled = true;
+            // console.log(status);
+
+        }   
+    </script>
 </body>
 
 </html>
