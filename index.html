@@ -9,10 +9,13 @@
 </head>
 
 <body>
-    <p>7.48pm wita</p>
-    <h1>Kalkulator Suhu Sederhana</h1>
-    <p>Masukan suhu derajat Celsius (&deg;C) ke kotak di bawah, lalu klik tombol konversi untuk mendapatkan hasil
-        konversi dalam bentuk Fahrenheit (&deg;F). Klik tombol 'Reverse' untuk perhitungan sebaliknya</p>
+    <header>
+        <p>9.36pm wita</p>
+        <h1>Kalkulator Suhu Sederhana</h1>
+        <p>Masukan suhu derajat Celsius (&deg;C) ke kotak di bawah, lalu klik tombol konversi untuk mendapatkan
+            hasil
+            konversi dalam bentuk Fahrenheit (&deg;F). Klik tombol 'Reverse' untuk perhitungan sebaliknya</p>
+    </header>
 
     <div>
         <div id="div1">
@@ -27,16 +30,28 @@
     </div>
 
     <br>
-    <div id="div2">
-        <p class="suhu">Fahrenheit (&deg;F):</p>
-        <!-- <textarea class="box" id="suhu2" disabled></textarea> -->
-        <input class="box" type="text" id="suhu2" disabled required>
-    </div>
-    <br>
-    <p class="suhu">Cara Kalkulasi:</p>
-    <!-- <textarea class="box" name="" id="kalkulasi" disabled></textarea> -->
-    <input type="text" class="box" id="kalkulasi" disabled>
-
+    <section>
+        <main>
+            <div id="div2">
+                <p class="suhu">Fahrenheit (&deg;F):</p>
+                <!-- <textarea class="box" id="suhu2" disabled></textarea> -->
+                <input class="box" type="text" id="suhu2" disabled required>
+            </div>
+            <br>
+            <p class="suhu">Cara Kalkulasi:</p>
+            <!-- <textarea class="box" name="" id="kalkulasi" disabled></textarea> -->
+            <input type="text" class="box" id="kalkulasi" disabled>
+        </main>
+        <article id="details">
+            <h2>Cara Konversi Dari Celcius (&degC) ke Fahrenheit (&degF)</h2>
+            <hr>
+            <p>Suhu S dalam derajat Fahrenheit (&degF) sama dengan suhu S dalam derajat Celsius (&degC) kali 9/5
+                tambah
+                32.</p>
+            <p>S<sub>(&degF)</sub>=(S<sub>(&degC)</sub>x 9/5) + 32 <br> atau <br>
+                S<sub>(&degF)</sub>=(S<sub>(&degC)</sub>x 1.8) + 32 </p>
+        </article>
+    </section>
     <script src="js/script.js"></script>
 </body>
 

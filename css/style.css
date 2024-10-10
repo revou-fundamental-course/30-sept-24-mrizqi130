@@ -20,3 +20,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 380px) {
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
